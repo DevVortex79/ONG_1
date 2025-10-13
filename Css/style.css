@@ -1,0 +1,73 @@
+/*========CORPO HTML============*/
+
+header {}
+
+body {
+  text-align: center;
+  background-color: #8d51a9;
+}
+
+/*==========SELETORES============*/
+
+h1 {
+  font-size: 400%;
+  color: #370c49;
+}
+
+h2 {
+  font-size: 200%;
+  color: #370c49;
+}
+
+
+a {
+  color: black;
+}
+
+p {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem
+}
+
+nav {
+  height: 60px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  background-color: #6a3781;
+  align-items: center;
+  text-align: center;
+
+}
+
+/*==========CLASSES=============*/
+.menu a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  color: #1e0729;
+}
+
+.fundo {
+  background-image: url("./IMG/lilás.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p {
+  color: black;
+  font-size: large;
+}
