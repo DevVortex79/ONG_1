@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Caminhos do Amanhã - Cadastro de Voluntariado</title>
+</head>
+
+<body>
+    <h1>
+        <img src="./IMG/Caminhos.jpg" alt="Logo do Instituto Caminhos do Amanhã" width="75">
+        Instituto Caminhos do Amanhã
+    </h1>
+    <nav>
+        <a href="./index.html">Página inicial</a> |
+        <a href="./projetos.html">Projetos sociais</a> |
+        <a href="./cadastro.html">Cadastro</a>
+    </nav>
+
+    <h3>Quem pode ser voluntário?</h3>
+    <img src="./IMG/maos.png" alt="Maos coloridas e descritivo de voluntario abaixo" width="300">
+    
+    <ul>
+        <li> Professores e educadores</li>
+        <li> Estudantes universitários</li>
+        <li> Profissionais de diversas áreas</li>
+        <li> Pessoas interessadas em apoiar crianças e adolescentes</li>
+    </ul>
+
+    <h3>Como o voluntário atua:</h3>
+    <img src="./IMG/cadastro.jpg" alt="Imagem de voluntario" width="250">
+    <ul>
+        <li>Ministrando oficinas educativas e culturais</li>
+        <li>Apoiando nas aulas de tecnologia, robótica e reforço escolar</li>
+        <li>Participando de atividades recreativas e esportivas</li>
+        <li>Auxiliando em eventos comunitários e campanhas solidárias</li>
+    </ul>
+
+    <h2>Cadastro:</h2>
+
+    <form>
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+
+            <label for="nome">Nome completo:</label><br>
+            <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required><br><br>
+
+            <label for="cpf">CPF:</label><br>
+            <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
+                pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite no formato 000.000.000-00"
+                required><br><br>
+
+            <label for="data">Data de nascimento:</label><br>
+            <input type="date" id="data" name="data" required max="2025-12-31"><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Contato</legend>
+
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required><br><br>
+
+            <label for="telefone">Telefone:</label><br>
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000"
+                pattern="\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}" title="Digite no formato (00) 90000-0000" required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Endereço</legend>
+
+            <label for="endereco">Endereço:</label><br>
+            <input type="text" id="endereco" name="endereco" placeholder="Rua, número, complemento" required><br><br>
+
+            <label for="cep">CEP:</label><br>
+            <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="[0-9]{5}-?[0-9]{3}"
+                title="Digite no formato 00000-000" required><br><br>
+
+            <label for="cidade">Cidade:</label><br>
+            <input type="text" id="cidade" name="cidade" required><br><br>
+
+            <label for="estado">Estado:</label><br>
+            <select id="estado" name="estado" required>
+                <option value="">Selecione...</option>
+                <option value="AC">Acre</option>
+                <option value="AL">Alagoas</option>
+                <option value="AP">Amapá</option>
+                <option value="AM">Amazonas</option>
+                <option value="BA">Bahia</option>
+                <option value="CE">Ceará</option>
+                <option value="DF">Distrito Federal</option>
+                <option value="ES">Espírito Santo</option>
+                <option value="GO">Goiás</option>
+                <option value="MA">Maranhão</option>
+                <option value="MT">Mato Grosso</option>
+                <option value="MS">Mato Grosso do Sul</option>
+                <option value="MG">Minas Gerais</option>
+                <option value="PA">Pará</option>
+                <option value="PB">Paraíba</option>
+                <option value="PR">Paraná</option>
+                <option value="PE">Pernambuco</option>
+                <option value="PI">Piauí</option>
+                <option value="RJ">Rio de Janeiro</option>
+                <option value="RN">Rio Grande do Norte</option>
+                <option value="RS">Rio Grande do Sul</option>
+                <option value="RO">Rondônia</option>
+                <option value="RR">Roraima</option>
+                <option value="SC">Santa Catarina</option>
+                <option value="SP">São Paulo</option>
+                <option value="SE">Sergipe</option>
+                <option value="TO">Tocantins</option>
+            </select><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Segurança e Confirmação</legend>
+
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" minlength="6" placeholder="Mínimo 6 caracteres"
+                required><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Termo de Uso</legend>
+
+            <section id="termo-uso">
+                <p>Ao se cadastrar nesta plataforma, você concorda com os termos e condições descritos abaixo:</p>
+
+                <h4>1. Coleta de Dados</h4>
+                <p>Os dados fornecidos neste formulário (nome, CPF, e-mail, telefone e endereço) serão
+                    utilizados exclusivamente para fins de gestão de voluntariado e comunicação da ONG.</p>
+
+                <h4>2. Uso dos Dados</h4>
+                <p>Os seus dados não serão compartilhados com terceiros sem o seu consentimento. A ONG se
+                    compromete a proteger a privacidade e a segurança das informações fornecidas.</p>
+
+                <h4>3. Responsabilidades do Usuário</h4>
+                <ul>
+                    <li>Fornecer informações verdadeiras e atualizadas;</li>
+                    <li>Não utilizar o sistema para fins ilegais ou prejudiciais;</li>
+                    <li>Aceitar receber comunicações relacionadas às atividades da ONG.</li>
+                </ul>
+
+                <h4>4. Responsabilidades da ONG</h4>
+                <ul>
+                    <li>Manter a confidencialidade e segurança dos dados;</li>
+                    <li>Utilizar os dados apenas para os fins descritos neste termo;</li>
+                    <li>Informar qualquer mudança relevante nos termos de uso aos voluntários cadastrados.</li>
+                </ul>
+
+                <h4>5. Aceitação do Termo</h4>
+                <p>Ao marcar a opção abaixo, você declara que leu, compreendeu e concorda com todas as condições
+                    descritas neste termo.</p>
+
+                <!-- Checkbox de aceite do termo -->
+                <input type="checkbox" id="termos" name="termos" required>
+                <label for="termos">Li e aceito os termos de uso</label><br><br>
+            </section>
+        </fieldset>
+
+        <!-- Botões do formulário -->
+        <input type="submit" value="Cadastrar">
+        <input type="reset" value="Limpar">
+
+    </form>
+
+    <footer>
+        <hr>
+        <p>&copy; 2025 Instituto Caminhos do Amanhã. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
