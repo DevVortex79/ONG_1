@@ -24,8 +24,8 @@
 
 **Componentes de Interface:**
 
-Utilização de sistema de cards responsivos
-Criar botões com estados visuais (hover, focus, active, disabled)
-Criação de formulário estilizado com validação visual
-Desenvolver componentes de feedback (alerts, toasts, modals)
-Desenvolver sistema de badges e tags para categorização
+- Utilização de sistema de cards responsivos
+- Criar botões com estados visuais (hover, focus, active, disabled)
+- Criação de formulário estilizado com validação visual
+- Desenvolver componentes de feedback (alerts, toasts, modals)
+- Desenvolver sistema de badges e tags para categorização
