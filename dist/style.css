@@ -1,19 +1,25 @@
 /*========CORPO HTML============*/
 
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 header {
   background-color: #DBDBDB;
   align-items: center;
-  /* alinha imagem e texto verticalmente */
   justify-content: space-evenly;
-  /* separa lado esquerdo (logo+título) do menu */
   padding: var(--sp-16) var(--sp-32);
-  /*display: grid;*/
 }
 
 .navdropdown {
   overflow: hidden;
   background-color: #104E8B;
-
 }
 
 .navdropdown a {
@@ -53,7 +59,6 @@ header {
   background-color: #104E8B;
   width: 100%;
   z-index: 1;
-
 }
 
 .subnavdropdown-content a {
@@ -68,20 +73,20 @@ header {
   color: black;
 }
 
-/* Esta é a regra principal que mostra o dropdown ao passar o mouse */
 .subnavdropdown:hover .subnavdropdown-content {
   display: block;
 }
 
+/* ===== FIELDSETS E FORMULÁRIOS ===== */
 fieldset {
   border: 2px solid #e8ecf4;
   border-radius: 15px;
-  padding: 30px;
+  padding: 20px;
   background: linear-gradient(145deg, #ffffff, #f8f9fa);
-  display: grid;
-  grid-template-columns: 40% 60%;
-  gap: 20px;
-  align-items: start;
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 legend {
@@ -92,91 +97,82 @@ legend {
   background: linear-gradient(135deg, #1E90FF, #1874CD);
   background-clip: text;
   -webkit-background-clip: text;
-  /* Para compatibilidade com Webkit */
   -webkit-text-fill-color: transparent;
-  /* Para compatibilidade com Webkit */
   text-align: left;
-  grid-column: 1 / -1;
-  /* Ocupa toda a largura do grid */
+  margin-bottom: 20px;
+  margin-top: 30px;
+  display: block;
+  width: 100%;
+}
+
+legend:first-of-type {
+  margin-top: 0;
+}
+
+#termo-uso {
+  margin: 15px 0;
+  width: 100%;
+  display: block;
+  clear: both;
+}
+
+#termo-uso h4 {
+  color: #1874CD;
+  font-size: 16px;
+  margin: 15px 0 8px 0;
+  font-weight: 600;
+}
+
+#termo-uso p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+legend {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 22px;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #1E90FF, #1874CD);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
   margin-bottom: 20px;
 }
 
 label {
   display: block;
-  /* Garante que cada label ocupe sua própria linha */
   margin-bottom: 8px;
+  margin-top: 10px;
   color: #0D4578;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
   transition: color 0.3s ease;
-  /* Transição suave para efeitos de hover ou validação */
+  width: 100%;
+  clear: both;
 }
 
-
-input[type=text] {
-  width: min-content;
-  padding: 12px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  outline: none;
-}
-
-input[type=data] {
-  width: min-content;
-  padding: 12px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  outline: none;
-}
-
-input[type=email] {
-  width: min-content;
-  padding: 12px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  outline: none;
-}
-
-input[type=tel] {
-  width: min-content;
-  padding: 12px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 1px solid #555;
-  outline: none;
-}
-
+/* ===== INPUTS ===== */
+input[type=text],
+input[type=date],
+input[type=email],
+input[type=tel],
 input[type=password] {
-  width: min-content;
+  width: 100%;
+  max-width: 400px;
   padding: 12px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 1px solid #555;
+  border: 2px solid #ccc;
+  border-radius: 6px;
   outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  display: block;
+  clear: both;
 }
-
-:focus {
-  outline: 3px solid #ff9800;
-  outline-offset: 3px;
-}
-
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: #000;
-  color: #fff;
-  padding: 8px 16px;
-  z-index: 10000;
-  transition: top 0.3s;
-}
-.skip-link:focus {
-  top: 0;
-}
-
 
 input[type=email]:focus {
   background-color: lightblue;
@@ -186,68 +182,118 @@ input[type=tel]:focus {
   background-color: lightblue;
 }
 
+input[type=text]:focus,
+input[type=date]:focus,
+input[type=email]:focus,
+input[type=tel]:focus,
 input[type=password]:focus {
-  background-color: lightblue;
+  background-color: #e3f2fd;
+  border-color: #104E8B;
+  box-shadow: 0 0 0 3px rgba(16, 78, 139, 0.1);
 }
 
-input[type=text]:focus {
-  background-color: lightblue;
+/* ===== CHECKBOX ===== */
+input[type=checkbox] {
+  margin-right: 8px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
 }
 
-body.high-contrast {
-  background-color: #000 !important;
-  color: #fff !important;
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  width: 100%;
+  clear: both;
 }
-body.high-contrast a {
-  color: #0ff !important;
-  text-decoration: underline;
+
+.checkbox-wrapper label {
+  margin: 0;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.checkbox-wrapper input[type=checkbox] {
+  flex-shrink: 0;
+}
+
+/* ===== BOTÕES ===== */
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 2px solid #e8ecf4;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .joinBtn {
-  width: 10em;
-  height: 5ex;
+  width: auto;
+  min-width: 150px;
+  height: 45px;
   background-color: #00688B;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   color: white;
   cursor: pointer;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .form-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .joinBtn {
+    width: 100%;
+  }
+}
+
+.joinBtn:hover {
+  background-color: #005577;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .joinBtn:active {
+  transform: translateY(0);
   box-shadow: 2px 2px 5px #fc894d;
 }
 
-/* Estilo base do alerta */
+/* ===== ALERTAS ===== */
 .alerta {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centraliza o conteúdo */
-  justify-content: center;
-  padding: 25px 45px 20px 45px;
-  border: 1px solid transparent;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
   border-radius: 8px;
-  margin: 10px 0;
-  font-family: Arial, sans-serif;
-  text-align: center;
+  font-weight: bold;
+  z-index: 10000;
+  animation: fadeInOut 3s ease forwards;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Sucesso */
 .alerta.sucesso {
-  color: #3c763d;
   background-color: #dff0d8;
-  border-color: #d6e9c6;
+  color: #3c763d;
+  border: 2px solid #d6e9c6;
 }
 
-/* Erro */
 .alerta.erro {
-  color: #a94442;
   background-color: #f2dede;
-  border-color: #ebccd1;
+  color: #a94442;
+  border: 2px solid #ebccd1;
 }
 
-/* Badge centralizado */
 .badge {
   display: inline-block;
   padding: 6px 12px;
@@ -255,130 +301,195 @@ body.high-contrast a {
   font-size: 13px;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 8px; /* Espaço entre o badge e o texto */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Cores dos badges */
-.sucesso-badge {
-  background-color: #28a745;
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    bottom: 10px;
+  }
+
+  10% {
+    opacity: 1;
+    bottom: 30px;
+  }
+
+  90% {
+    opacity: 1;
+    bottom: 30px;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 50px;
+  }
 }
 
-.erro-badge {
-  background-color: #dc3545;
+/* ===== VALIDAÇÃO DE FORMULÁRIO ===== */
+.campo-valido {
+  border: 2px solid #28a745 !important;
+  background-color: #f0fff4 !important;
+  padding-right: 40px !important;
 }
 
-/* Botão de fechar */
-.fechar-btn {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  color: inherit;
+.campo-invalido {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff5f5 !important;
+  padding-right: 40px !important;
+  animation: shake 0.3s ease;
 }
 
-/* Esconde o alerta quando o checkbox é marcado */
-#alerta1:checked + .alerta.sucesso,
-#alerta2:checked + .alerta.erro {
-  display: none;
-}
-.fechar-btn {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  font-size: 22px;
-  font-weight: bold;
-  cursor: pointer;
-  color: inherit;
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
-.passosDoacao{
-  font-size: 20px;
+.erro-validacao {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 8px 12px;
+  background-color: #fff5f5;
+  border-left: 4px solid #dc3545;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  animation: slideDown 0.3s ease;
 }
 
-/* ===== GRID PERSONALIZADO ===== */
-.form-grid {
+.erro-validacao::before {
+  content: "⚠ ";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== GRID DO FORMULÁRIO ===== */
+.Frm-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
-  max-width: 900px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
-}
-
-/* Controle de colunas */
-.col-1  { grid-column: span 1; }
-.col-2  { grid-column: span 2; }
-.col-3  { grid-column: span 3; }
-.col-4  { grid-column: span 4; }
-.col-5  { grid-column: span 5; }
-.col-6  { grid-column: span 6; }
-.col-7  { grid-column: span 7; }
-.col-8  { grid-column: span 8; }
-.col-9  { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
-
-/* ===== VISUAL PADRÃO ===== */
-fieldset {
-  border: 2px solid #2e7d32;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #f9fff9;
-}
-
-legend {
-  color: #2e7d32;
-  font-weight: bold;
-  padding: 0 10px;
-}
-
-label {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
-  color: #333;
-}
-
-input,
-select {
-  
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
   box-sizing: border-box;
 }
 
+.col-1 {
+  grid-column: span 1;
+}
 
+.col-2 {
+  grid-column: span 2;
+}
 
+.col-3 {
+  grid-column: span 3;
+}
 
-/* ===== RESPONSIVO ===== */
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-10 {
+  grid-column: span 10;
+}
+
+.col-11 {
+  grid-column: span 11;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
+
+/* Grid responsivo */
 @media (max-width: 768px) {
   .Frm-grid {
     grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
   }
+
   [class*="col-"] {
     grid-column: span 1;
   }
+
+  fieldset {
+    padding: 15px;
+  }
 }
 
-/* Quando o checkbox está marcado, esconder o alerta correspondente */
-#alerta1:checked + .alerta.sucesso,
-#alerta2:checked + .alerta.erro {
-  display: none;
+@media (max-width: 480px) {
+  .Frm-grid {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  fieldset {
+    padding: 10px;
+  }
 }
 
-/* Estilo para todas as citações dentro desse trecho */
+/* ===== PASSOS DE DOAÇÃO ===== */
+.passosDoacao {
+  font-size: 18px;
+  line-height: 1.8;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 15px 0;
+}
+
+/* ===== BLOCKQUOTES ===== */
 blockquote {
   display: block;
-  font-style:normal;
+  font-style: normal;
   color: #0D4578;
   border-left: 4px solid #00008B;
   border-radius: 12px;
@@ -386,36 +497,30 @@ blockquote {
   padding: 15px 20px;
   position: relative;
   margin: 20px 0;
-  margin: 10px 0;
   transition: all 0.3s ease;
 }
 
-/* Efeito hover para destacar */
 blockquote:hover {
-    background-color: #00008B; 
-    transform: scale(1.02);
-    color: white;
-    font-size: 18px;
+  background-color: #00008B;
+  transform: scale(1.02);
+  color: white;
+  font-size: 18px;
 }
 
-/* Opção: adicionar "tag" visual no canto superior esquerdo */
 blockquote::before {
-    content: "Depoimento";
-    position: absolute;
-    top: -10px;
-    left: 15px;
-    background-color: #00008B; /* Laranja como tag */
-    color: white;
-    padding: 2px 8px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: bold;
+  content: "Depoimento";
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  background-color: #00008B;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
 }
 
-
-
-/*==========SELETORES============*/
-
+/* ===== TÍTULOS ===== */
 h2 {
   font-size: 200%;
   color: #00688B;
@@ -431,36 +536,36 @@ h4 {
   color: #1874CD;
 }
 
-
 p {
   color: black;
   font-size: 120%;
   line-height: 1.6;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
 
-/*==========BREAKPOINTS RESPONSIVOS=============*/
-
-/* INICIO REGRAS PARA DISPOSITIVOS DE IMPRESSÃO */
-@media print {
-  /*INSIRA REGRAS CSS AQUI !*/
+/* ===== FOOTER ===== */
+.footer {
+  background-color: #B8B8B8;
+  padding: 5px;
+  text-align: left;
+  color: black;
+  font-size: 20px;
 }
 
-/* FIM REGRAS PARA DISPOSITIVOS DE IMPRESSÃO */
+.footer p {
+  font-size: 20px;
+  margin-bottom: 0;
+}
 
-/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 320 PIXELS. POR EXEMPLO: SMARTHPHONES */
+/* ===== RESPONSIVO - MOBILE (max-width: 320px) ===== */
 @media screen and (max-width: 320px) {
-
   body {
-    /* text-align: center;*/
     background-color: #F0F0F0;
-
   }
 
   header {
     background-color: #DBDBDB;
     display: flex;
-
   }
 
   h1 {
@@ -468,21 +573,7 @@ p {
   }
 
   p {
-    color: black;
     font-size: 100%;
-    line-height: 1.6;
-    margin-bottom: 2rem
-  }
-
-  nav {
-    height: var(--sp-48);
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: #104E8B;
-    align-items: center;
-    text-align: center;
-
   }
 
   .navdropdown {
@@ -490,35 +581,35 @@ p {
   }
 
   .container {
-    display: flexbox;
-    width: 280px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
   .containerIMG {
     background-color: #104E8B;
     border: 1px solid black;
     width: 280px;
+    margin: 10px 0;
   }
 
   .card {
     background-color: #104E8B;
-    flex-wrap: wrap;
-    padding: 0 4px;
-    max-width: 100%;
-    height: auto;
+    padding: 15px;
+    margin: 10px 0;
+    width: 100%;
   }
 
   .footer {
     background-color: #B8B8B8;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
+    padding: 5px;
+    text-align: left;
     color: black;
-
+    font-size: 18px;
   }
 
-  /*MENU HAMBURGUER*/
-
+  /* MENU HAMBURGUER */
   #menu__toggle {
     opacity: 0;
   }
@@ -548,7 +639,7 @@ p {
     width: 26px;
     height: 26px;
     cursor: pointer;
-    z-index: 1;
+    z-index: 1001;
   }
 
   .menu__btn>span,
@@ -585,6 +676,7 @@ p {
     background-color: #ECEFF1;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
     transition-duration: .25s;
+    z-index: 1000;
   }
 
   .menu__item {
@@ -603,12 +695,9 @@ p {
   }
 }
 
-/* FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 320 PIXELS. POR EXEMPLO: SMARTHPHONES */
-
-/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 768 PIXELS. POR EXEMPLO: TABLETS */
+/* ===== RESPONSIVO - TABLET (321px - 768px) ===== */
 @media screen and (min-width: 321px) and (max-width: 768px) {
   body {
-    /* text-align: center;*/
     background-color: #F0F0F0;
   }
 
@@ -624,42 +713,17 @@ p {
     text-align: center;
   }
 
-  p {
-    color: black;
-    line-height: 1.6;
-    margin-bottom: 2rem
-  }
-
-  nav {
-    height: var(--sp-48);
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: #104E8B;
-    align-items: center;
-    text-align: center;
-    width: auto;
-    font-size: x-large;
-  }
-
-  .corpo {
-    width: auto;
-  }
-
   .container {
-    display: -ms-grid;
-    align-items: auto;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-
+    gap: 15px;
   }
 
   .containerIMG {
     background-color: #104E8B;
     border: 1px solid black;
-
-
+    max-width: 45%;
   }
 
   .card {
@@ -667,32 +731,27 @@ p {
     flex-wrap: wrap;
     max-width: 100%;
     height: auto;
+    margin: 10px 0;
+    padding: 15px;
   }
 
   .footer {
     background-color: #B8B8B8;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
+    padding: 5px;
+    text-align: left;
     color: black;
-    width: auto;
-    font-size: large;
+    font-size: 18px;
   }
 
   .hamburger-menu {
     display: none;
   }
-
 }
 
-
-/* FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 768 PIXELS. POR EXEMPLO: TABLETS */
-
-/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: COMPUTADORES DESKTOP E NOTEBOOKS */
+/* ===== RESPONSIVO - DESKTOP SMALL (769px - 1024px) ===== */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   body {
     background-color: #F0F0F0;
-
   }
 
   header {
@@ -707,58 +766,32 @@ p {
     text-align: center;
   }
 
-  p {
-    color: black;
-    line-height: 1.6;
-    margin-bottom: 2rem
-  }
-
-  nav {
-    height: var(--sp-48);
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: #104E8B;
-    align-items: center;
-    text-align: center;
-    width: auto;
-    font-size: x-large;
-  }
-
-  .corpo {
-    width: auto;
-  }
-
   .container {
-    display: -ms-grid;
-    align-items: auto;
+    display: flex;
     justify-content: space-around;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr auto;
-
+    gap: 20px;
   }
 
   .containerIMG {
     background-color: #104E8B;
     border: 1px solid black;
-
+    max-width: 30%;
   }
 
   .card {
     background-color: #104E8B;
-    flex-wrap: wrap;
     max-width: 100%;
     height: auto;
+    margin: 15px 0;
+    padding: 20px;
   }
 
   .footer {
     background-color: #B8B8B8;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
+    padding: 5px;
+    text-align: center;
     color: black;
-    width: auto;
-    font-size: larger;
+    font-size: 18px;
   }
 
   .hamburger-menu {
@@ -766,16 +799,10 @@ p {
   }
 }
 
-/* 
-FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: COMPUTADORES DESKTOP E NOTEBOOKS
- */
-
-/* REGRAS PARA DISPOSTIVOS COM LARGURA MINIMA DE 1025 PIXELS EM DIANTE. */
-
+/* ===== RESPONSIVO - DESKTOP LARGE (1025px+) ===== */
 @media screen and (min-width: 1025px) {
   body {
     background-color: #F0F0F0;
-
   }
 
   header {
@@ -790,32 +817,12 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
     text-align: center;
   }
 
-  p {
-    color: black;
-    line-height: 1.6;
-    margin-bottom: 2rem
-  }
-
-  nav {
-    height: var(--sp-48);
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    background-color: #104E8B;
-    align-items: center;
-    text-align: center;
-    width: auto;
-    font-size: x-large;
-  }
-
-  .corpo {
-    width: auto;
-  }
-
   .container {
     display: flex;
     width: auto;
     justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
   }
 
   .containerIMG {
@@ -826,19 +833,18 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
 
   .card {
     background-color: #104E8B;
-    flex-wrap: wrap;
     max-width: 100%;
     height: auto;
+    margin: 15px 0;
+    padding: 20px;
   }
 
   .footer {
     background-color: #B8B8B8;
-    height: auto;
-    display: flex;
-    flex-wrap: nowrap;
+    padding: 5px;
+    text-align: left;
     color: black;
-    width: auto;
-    font-size: larger;
+    font-size: 20px;
   }
 
   .hamburger-menu {
@@ -846,8 +852,7 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
   }
 }
 
-/* FIM DE REGRAS PARA DISPOSTIVOS COM LARGURA MINIMA DE 1025 PIXELS EM DIANTE. */
-
+/* ===== VARIÁVEIS CSS ===== */
 :root {
   --sp-8: 8px;
   --sp-16: 16px;
@@ -857,16 +862,7 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
   --sp-64: 64px;
 }
 
-.fundo {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* ===== UTILITÁRIOS ===== */
 .a {
   color: rgb(249, 249, 249);
 }
@@ -876,143 +872,44 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
 }
 
 .headerIMG {
-  box-shadow: var(--sp-8) #949494;
+  box-shadow: var(--sp-8) var(--sp-8) 0 #949494;
   background-color: #104E8B;
   border-radius: 10px;
-
 }
 
-/* ALERTA CENTRALIZADO ANIMADO */
-.alerta {
-  position: fixed;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 15px 30px;
-  border-radius: 8px;
-  font-weight: bold;
+.corpo {
+  padding: 20px;
+}
+
+/* ===== ACESSIBILIDADE ===== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #104E8B;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
   z-index: 10000;
-  animation: fadeInOut 3s ease forwards;
+  font-weight: bold;
+  border-radius: 0 0 8px 0;
+  transition: top 0.3s;
 }
 
-@keyframes fadeInOut {
-  0% { opacity: 0; bottom: 10px; }
-  10% { opacity: 1; bottom: 30px; }
-  90% { opacity: 1; bottom: 30px; }
-  100% { opacity: 0; bottom: 50px; }
-}
-
-/* ===== ESTILOS DE VALIDAÇÃO DE FORMULÁRIO ===== */
-
-/* Campo válido */
-.campo-valido {
-  border: 2px solid #28a745 !important;
-  background-color: #f0fff4 !important;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px;
-  padding-right: 40px !important;
-}
-
-/* Campo inválido */
-.campo-invalido {
-  border: 2px solid #dc3545 !important;
-  background-color: #fff5f5 !important;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23dc3545" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 20px;
-  padding-right: 40px !important;
-  animation: shake 0.3s ease;
-}
-
-/* Animação de erro */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
-}
-
-/* Mensagem de erro */
-.erro-validacao {
-  color: #dc3545;
-  font-size: 14px;
-  font-weight: 600;
-  margin-top: 5px;
-  padding: 8px 12px;
-  background-color: #fff5f5;
-  border-left: 4px solid #dc3545;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  animation: slideDown 0.3s ease;
-}
-
-.erro-validacao::before {
-  content: "⚠";
-  margin-right: 8px;
-  font-size: 16px;
-}
-
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Estilo para campos de senha com indicador de força */
-#senha.campo-valido {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>');
-}
-
-/* Ajuste para campos com máscara */
-input[type="text"].campo-valido,
-input[type="tel"].campo-valido,
-input[type="email"].campo-valido,
-input[type="password"].campo-valido,
-input[type="date"].campo-valido {
-  transition: all 0.3s ease;
-}
-
-input[type="text"].campo-invalido,
-input[type="tel"].campo-invalido,
-input[type="email"].campo-invalido,
-input[type="password"].campo-invalido,
-input[type="date"].campo-invalido {
-  transition: all 0.3s ease;
-}
-
-/* Focus nos campos validados */
-.campo-valido:focus {
-  border-color: #28a745 !important;
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
-  outline: none;
-}
-
-.campo-invalido:focus {
-  border-color: #dc3545 !important;
-  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
-  outline: none;
-}
-
-/* Estilo para checkbox de termos com erro */
-#termos:invalid {
-  outline: 2px solid #dc3545;
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #FFD700;
   outline-offset: 2px;
 }
 
-/* Tooltip de ajuda (opcional) */
-.campo-ajuda {
-  font-size: 12px;
-  color: #6c757d;
-  margin-top: 4px;
-  font-style: italic;
+/* Focus apenas para inputs e botões de formulário */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+button[type="submit"]:focus-visible,
+button[type="reset"]:focus-visible {
+  outline: 3px solid #ff9800;
+  outline-offset: 4px;
 }
 
 /* Badge de força da senha */
@@ -1047,27 +944,20 @@ input[type="date"].campo-invalido {
     font-size: 12px;
     padding: 6px 10px;
   }
-  
   .campo-valido,
   .campo-invalido {
     background-size: 16px;
     background-position: right 8px center;
     padding-right: 35px !important;
   }
-}
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-
-  header, nav, footer {
-    background-color: #0D4578;
-    color: #fff;
-  }
-
-  a {
-    color: #90caf9;
+  /* Remove outline dos links e botões de navegação */
+  .navdropdown a:focus,
+  .navdropdown a:focus-visible,
+  .menu__item:focus,
+  .menu__item:focus-visible,
+  .subnavdropdownbtn:focus,
+  .subnavdropdownbtn:focus-visible {
+    outline: none;
   }
 }

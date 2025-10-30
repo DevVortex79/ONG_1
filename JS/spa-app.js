@@ -333,3 +333,76 @@ document.addEventListener("click", e => {
 
 window.addEventListener("popstate", router);
 document.addEventListener("DOMContentLoaded", router);
+
+// ---------- Acessibilidade: Modo Escuro / Alto Contraste ----------
+(function() {
+  const toggleBtn = document.getElementById('a11yToggle');
+  const panel = document.getElementById('a11yPanel');
+  const darkToggle = document.getElementById('toggleDark');
+  const hcToggle = document.getElementById('toggleHC');
+  const ann = document.getElementById('a11yAnnouncer');
+
+  if (!toggleBtn || !panel) return;
+
+  const KEY = 'theme-prefs';
+
+  function loadPrefs() {
+    try {
+      const prefs = JSON.parse(localStorage.getItem(KEY)) || { dark: false, hc: false };
+      document.body.classList.toggle('dark-mode', prefs.dark);
+      document.body.classList.toggle('high-contrast', prefs.hc);
+      darkToggle.checked = prefs.dark;
+      hcToggle.checked = prefs.hc;
+    } catch {
+      document.body.classList.remove('dark-mode', 'high-contrast');
+    }
+  }
+
+  function savePrefs() {
+    localStorage.setItem(KEY, JSON.stringify({
+      dark: darkToggle.checked,
+      hc: hcToggle.checked
+    }));
+  }
+
+  function announce(msg) {
+    ann.textContent = msg;
+  }
+
+  function openPanel(show = true) {
+    panel.dataset.open = show ? 'true' : 'false';
+    toggleBtn.setAttribute('aria-expanded', show);
+    if (show) darkToggle.focus();
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const open = panel.dataset.open === 'true';
+    openPanel(!open);
+  });
+
+  document.addEventListener('click', e => {
+    if (!panel.contains(e.target) && e.target !== toggleBtn) openPanel(false);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') openPanel(false);
+  });
+
+  darkToggle.addEventListener('change', () => {
+    document.body.classList.toggle('dark-mode', darkToggle.checked);
+    savePrefs();
+    announce(darkToggle.checked ? 'Modo escuro ativado' : 'Modo escuro desativado');
+  });
+
+  hcToggle.addEventListener('change', () => {
+    document.body.classList.toggle('high-contrast', hcToggle.checked);
+    savePrefs();
+    announce(hcToggle.checked ? 'Alto contraste ativado' : 'Alto contraste desativado');
+  });
+
+  // Fecha painel ao mudar rota na SPA
+  window.addEventListener('routechange', () => openPanel(false));
+
+  // Inicia com modo escuro DESATIVADO (padrão)
+  loadPrefs();
+})();

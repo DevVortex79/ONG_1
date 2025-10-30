@@ -961,3 +961,148 @@ button[type="reset"]:focus-visible {
     outline: none;
   }
 }
+
+/* ---------- BOTÃO DE ACESSIBILIDADE ----------- */
+.a11y-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10050;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #104E8B;
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 16px rgba(16, 78, 139, 0.35);
+  cursor: pointer;
+  font-size: 22px;
+  transition: background 0.3s;
+}
+.a11y-toggle:hover {
+  background: #0c3e70;
+}
+.a11y-toggle:focus {
+  outline: 3px solid #ffb74d;
+  outline-offset: 3px;
+}
+
+/* Painel de opções */
+.a11y-panel {
+  position: fixed;
+  right: 16px;
+  bottom: 82px;
+  z-index: 10050;
+  background: #fff;
+  color: #111;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  padding: 12px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+.a11y-panel[data-open="true"] {
+  display: flex;
+}
+
+/* Linha de opção */
+.a11y-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Toggle switch */
+.a11y-option input[type="checkbox"] {
+  width: 36px;
+  height: 20px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #ccc;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+.a11y-option input[type="checkbox"]::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  transition: transform 0.2s;
+}
+.a11y-option input[type="checkbox"]:checked {
+  background: #104E8B;
+}
+.a11y-option input[type="checkbox"]:checked::after {
+  transform: translateX(16px);
+}
+
+/* Texto auxiliar */
+.a11y-panel small {
+  color: #555;
+  font-size: 12px;
+}
+
+/* Mensagem oculta para leitores de tela */
+.a11y-announcer {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- TEMAS ---------- */
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --primary: #104E8B;
+}
+
+/* Modo escuro */
+body.dark-mode {
+  --bg: #0f1720;
+  --text: #e6eef8;
+  --primary: #5fb0ff;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Alto contraste (fundo escuro e letras claras) */
+body.high-contrast {
+  --bg: #000;
+  --text: #fff;  /* letras claras */
+  --primary: #00ffff;
+  background-color: var(--bg) !important;
+  color: var(--text) !important;
+}
+
+/* Aplicar variáveis em partes principais */
+body, main, header, footer {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+a, .menu__item {
+  color: var(--primary);
+}
+
+body.high-contrast a {
+  text-decoration: underline;
+}
+
+body.high-contrast :focus {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}

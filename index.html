@@ -157,6 +157,25 @@
     </footer>
   </div>
 
+<!-- Botão e painel de acessibilidade -->
+<button id="a11yToggle" class="a11y-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="a11yPanel" title="Acessibilidade">
+  ♿
+</button>
+
+<div id="a11yPanel" class="a11y-panel" role="dialog" aria-modal="false" aria-label="Opções de acessibilidade" data-open="false">
+  <div class="a11y-option">
+    <label for="toggleDark">Modo Escuro</label>
+    <input id="toggleDark" type="checkbox" aria-checked="false">
+  </div>
+  <div class="a11y-option">
+    <label for="toggleHC">Alto Contraste</label>
+    <input id="toggleHC" type="checkbox" aria-checked="false">
+  </div>
+  <small>Use Tab para navegar. Esc fecha.</small>
+</div>
+
+<div id="a11yAnnouncer" class="a11y-announcer" aria-live="polite" aria-atomic="true"></div>
+  
   <!-- ==================== SCRIPTS DO SPA ==================== -->
   <!-- IMPORTANTE: Manter esta ordem -->
   <script type="module" src="Js/spa-router.js"></script>
