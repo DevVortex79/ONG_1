@@ -1,0 +1,1073 @@
+/*========CORPO HTML============*/
+
+header {
+  background-color: #DBDBDB;
+  align-items: center;
+  /* alinha imagem e texto verticalmente */
+  justify-content: space-evenly;
+  /* separa lado esquerdo (logo+título) do menu */
+  padding: var(--sp-16) var(--sp-32);
+  /*display: grid;*/
+}
+
+.navdropdown {
+  overflow: hidden;
+  background-color: #104E8B;
+
+}
+
+.navdropdown a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnavdropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.subnavdropdown .subnavdropdownbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  cursor: pointer;
+}
+
+.subnavdropdown:hover .subnavdropdownbtn {
+  background-color: #0D4578;
+}
+
+.subnavdropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color: #104E8B;
+  width: 100%;
+  z-index: 1;
+
+}
+
+.subnavdropdown-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+  padding: 14px 16px;
+}
+
+.subnavdropdown-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/* Esta é a regra principal que mostra o dropdown ao passar o mouse */
+.subnavdropdown:hover .subnavdropdown-content {
+  display: block;
+}
+
+fieldset {
+  border: 2px solid #e8ecf4;
+  border-radius: 15px;
+  padding: 30px;
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  display: grid;
+  grid-template-columns: 40% 60%;
+  gap: 20px;
+  align-items: start;
+}
+
+legend {
+  font-weight: 700;
+  color: #2c3e50;
+  font-size: 22px;
+  padding: 0 15px;
+  background: linear-gradient(135deg, #1E90FF, #1874CD);
+  background-clip: text;
+  -webkit-background-clip: text;
+  /* Para compatibilidade com Webkit */
+  -webkit-text-fill-color: transparent;
+  /* Para compatibilidade com Webkit */
+  text-align: left;
+  grid-column: 1 / -1;
+  /* Ocupa toda a largura do grid */
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  /* Garante que cada label ocupe sua própria linha */
+  margin-bottom: 8px;
+  color: #0D4578;
+  font-weight: 600;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  /* Transição suave para efeitos de hover ou validação */
+}
+
+
+input[type=text] {
+  width: min-content;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=data] {
+  width: min-content;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=email] {
+  width: min-content;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=tel] {
+  width: min-content;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+input[type=password] {
+  width: min-content;
+  padding: 12px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+}
+
+:focus {
+  outline: 3px solid #ff9800;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+
+input[type=email]:focus {
+  background-color: lightblue;
+}
+
+input[type=tel]:focus {
+  background-color: lightblue;
+}
+
+input[type=password]:focus {
+  background-color: lightblue;
+}
+
+input[type=text]:focus {
+  background-color: lightblue;
+}
+
+body.high-contrast {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+body.high-contrast a {
+  color: #0ff !important;
+  text-decoration: underline;
+}
+
+.joinBtn {
+  width: 10em;
+  height: 5ex;
+  background-color: #00688B;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.joinBtn:active {
+  box-shadow: 2px 2px 5px #fc894d;
+}
+
+/* Estilo base do alerta */
+.alerta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo */
+  justify-content: center;
+  padding: 25px 45px 20px 45px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  margin: 10px 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+/* Sucesso */
+.alerta.sucesso {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+/* Erro */
+.alerta.erro {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+/* Badge centralizado */
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 8px; /* Espaço entre o badge e o texto */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Cores dos badges */
+.sucesso-badge {
+  background-color: #28a745;
+}
+
+.erro-badge {
+  background-color: #dc3545;
+}
+
+/* Botão de fechar */
+.fechar-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+}
+
+/* Esconde o alerta quando o checkbox é marcado */
+#alerta1:checked + .alerta.sucesso,
+#alerta2:checked + .alerta.erro {
+  display: none;
+}
+.fechar-btn {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: inherit;
+}
+
+.passosDoacao{
+  font-size: 20px;
+}
+
+/* ===== GRID PERSONALIZADO ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Controle de colunas */
+.col-1  { grid-column: span 1; }
+.col-2  { grid-column: span 2; }
+.col-3  { grid-column: span 3; }
+.col-4  { grid-column: span 4; }
+.col-5  { grid-column: span 5; }
+.col-6  { grid-column: span 6; }
+.col-7  { grid-column: span 7; }
+.col-8  { grid-column: span 8; }
+.col-9  { grid-column: span 9; }
+.col-10 { grid-column: span 10; }
+.col-11 { grid-column: span 11; }
+.col-12 { grid-column: span 12; }
+
+/* ===== VISUAL PADRÃO ===== */
+fieldset {
+  border: 2px solid #2e7d32;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9fff9;
+}
+
+legend {
+  color: #2e7d32;
+  font-weight: bold;
+  padding: 0 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input,
+select {
+  
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .Frm-grid {
+    grid-template-columns: 1fr;
+  }
+  [class*="col-"] {
+    grid-column: span 1;
+  }
+}
+
+/* Quando o checkbox está marcado, esconder o alerta correspondente */
+#alerta1:checked + .alerta.sucesso,
+#alerta2:checked + .alerta.erro {
+  display: none;
+}
+
+/* Estilo para todas as citações dentro desse trecho */
+blockquote {
+  display: block;
+  font-style:normal;
+  color: #0D4578;
+  border-left: 4px solid #00008B;
+  border-radius: 12px;
+  background-color: #d1d0d0;
+  padding: 15px 20px;
+  position: relative;
+  margin: 20px 0;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+
+/* Efeito hover para destacar */
+blockquote:hover {
+    background-color: #00008B; 
+    transform: scale(1.02);
+    color: white;
+    font-size: 18px;
+}
+
+/* Opção: adicionar "tag" visual no canto superior esquerdo */
+blockquote::before {
+    content: "Depoimento";
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background-color: #00008B; /* Laranja como tag */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+/*==========SELETORES============*/
+
+h2 {
+  font-size: 200%;
+  color: #00688B;
+}
+
+h3 {
+  font-size: 150%;
+  color: #1E90FF;
+}
+
+h4 {
+  font-size: 150%;
+  color: #1874CD;
+}
+
+
+p {
+  color: black;
+  font-size: 120%;
+  line-height: 1.6;
+  margin-bottom: 2rem
+}
+
+/*==========BREAKPOINTS RESPONSIVOS=============*/
+
+/* INICIO REGRAS PARA DISPOSITIVOS DE IMPRESSÃO */
+@media print {
+  /*INSIRA REGRAS CSS AQUI !*/
+}
+
+/* FIM REGRAS PARA DISPOSITIVOS DE IMPRESSÃO */
+
+/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 320 PIXELS. POR EXEMPLO: SMARTHPHONES */
+@media screen and (max-width: 320px) {
+
+  body {
+    /* text-align: center;*/
+    background-color: #F0F0F0;
+
+  }
+
+  header {
+    background-color: #DBDBDB;
+    display: flex;
+
+  }
+
+  h1 {
+    display: none;
+  }
+
+  p {
+    color: black;
+    font-size: 100%;
+    line-height: 1.6;
+    margin-bottom: 2rem
+  }
+
+  nav {
+    height: var(--sp-48);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #104E8B;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .navdropdown {
+    display: none;
+  }
+
+  .container {
+    display: flexbox;
+    width: 280px;
+  }
+
+  .containerIMG {
+    background-color: #104E8B;
+    border: 1px solid black;
+    width: 280px;
+  }
+
+  .card {
+    background-color: #104E8B;
+    flex-wrap: wrap;
+    padding: 0 4px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    background-color: #B8B8B8;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    color: black;
+
+  }
+
+  /*MENU HAMBURGUER*/
+
+  #menu__toggle {
+    opacity: 0;
+  }
+
+  #menu__toggle:checked+.menu__btn>span {
+    transform: rotate(45deg);
+  }
+
+  #menu__toggle:checked+.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0deg);
+  }
+
+  #menu__toggle:checked+.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  #menu__toggle:checked~.menu__box {
+    left: 0 !important;
+  }
+
+  .menu__btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+  }
+
+  .menu__btn>span::before {
+    content: '';
+    top: -8px;
+  }
+
+  .menu__btn>span::after {
+    content: '';
+    top: 8px;
+  }
+
+  .menu__box {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+    transition-duration: .25s;
+  }
+
+  .menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+  }
+
+  .menu__item:hover {
+    background-color: #CFD8DC;
+  }
+}
+
+/* FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 320 PIXELS. POR EXEMPLO: SMARTHPHONES */
+
+/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 768 PIXELS. POR EXEMPLO: TABLETS */
+@media screen and (min-width: 321px) and (max-width: 768px) {
+  body {
+    /* text-align: center;*/
+    background-color: #F0F0F0;
+  }
+
+  header {
+    background-color: #DBDBDB;
+    display: flex;
+    width: auto;
+  }
+
+  h1 {
+    font-size: var(--sp-48);
+    color: #00008B;
+    text-align: center;
+  }
+
+  p {
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 2rem
+  }
+
+  nav {
+    height: var(--sp-48);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #104E8B;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    font-size: x-large;
+  }
+
+  .corpo {
+    width: auto;
+  }
+
+  .container {
+    display: -ms-grid;
+    align-items: auto;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+
+  }
+
+  .containerIMG {
+    background-color: #104E8B;
+    border: 1px solid black;
+
+
+  }
+
+  .card {
+    background-color: #104E8B;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    background-color: #B8B8B8;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    color: black;
+    width: auto;
+    font-size: large;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+}
+
+
+/* FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 768 PIXELS. POR EXEMPLO: TABLETS */
+
+/* INICIO REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: COMPUTADORES DESKTOP E NOTEBOOKS */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    background-color: #F0F0F0;
+
+  }
+
+  header {
+    background-color: #DBDBDB;
+    display: flex;
+    width: auto;
+  }
+
+  h1 {
+    font-size: var(--sp-64);
+    color: #00008B;
+    text-align: center;
+  }
+
+  p {
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 2rem
+  }
+
+  nav {
+    height: var(--sp-48);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #104E8B;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    font-size: x-large;
+  }
+
+  .corpo {
+    width: auto;
+  }
+
+  .container {
+    display: -ms-grid;
+    align-items: auto;
+    justify-content: space-around;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+
+  }
+
+  .containerIMG {
+    background-color: #104E8B;
+    border: 1px solid black;
+
+  }
+
+  .card {
+    background-color: #104E8B;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    background-color: #B8B8B8;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    color: black;
+    width: auto;
+    font-size: larger;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* 
+FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: COMPUTADORES DESKTOP E NOTEBOOKS
+ */
+
+/* REGRAS PARA DISPOSTIVOS COM LARGURA MINIMA DE 1025 PIXELS EM DIANTE. */
+
+@media screen and (min-width: 1025px) {
+  body {
+    background-color: #F0F0F0;
+
+  }
+
+  header {
+    background-color: #DBDBDB;
+    display: flex;
+    width: auto;
+  }
+
+  h1 {
+    font-size: var(--sp-64);
+    color: #00008B;
+    text-align: center;
+  }
+
+  p {
+    color: black;
+    line-height: 1.6;
+    margin-bottom: 2rem
+  }
+
+  nav {
+    height: var(--sp-48);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    background-color: #104E8B;
+    align-items: center;
+    text-align: center;
+    width: auto;
+    font-size: x-large;
+  }
+
+  .corpo {
+    width: auto;
+  }
+
+  .container {
+    display: flex;
+    width: auto;
+    justify-content: space-around;
+  }
+
+  .containerIMG {
+    background-color: #104E8B;
+    border: 1px solid black;
+    width: 280px;
+  }
+
+  .card {
+    background-color: #104E8B;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    background-color: #B8B8B8;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    color: black;
+    width: auto;
+    font-size: larger;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* FIM DE REGRAS PARA DISPOSTIVOS COM LARGURA MINIMA DE 1025 PIXELS EM DIANTE. */
+
+:root {
+  --sp-8: 8px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-48: 48px;
+  --sp-64: 64px;
+}
+
+.fundo {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.a {
+  color: rgb(249, 249, 249);
+}
+
+.p {
+  color: rgb(249, 249, 249);
+}
+
+.headerIMG {
+  box-shadow: var(--sp-8) #949494;
+  background-color: #104E8B;
+  border-radius: 10px;
+
+}
+
+/* ALERTA CENTRALIZADO ANIMADO */
+.alerta {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 10000;
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; bottom: 10px; }
+  10% { opacity: 1; bottom: 30px; }
+  90% { opacity: 1; bottom: 30px; }
+  100% { opacity: 0; bottom: 50px; }
+}
+
+/* ===== ESTILOS DE VALIDAÇÃO DE FORMULÁRIO ===== */
+
+/* Campo válido */
+.campo-valido {
+  border: 2px solid #28a745 !important;
+  background-color: #f0fff4 !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px !important;
+}
+
+/* Campo inválido */
+.campo-invalido {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff5f5 !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23dc3545" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px !important;
+  animation: shake 0.3s ease;
+}
+
+/* Animação de erro */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Mensagem de erro */
+.erro-validacao {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 8px 12px;
+  background-color: #fff5f5;
+  border-left: 4px solid #dc3545;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  animation: slideDown 0.3s ease;
+}
+
+.erro-validacao::before {
+  content: "⚠";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para campos de senha com indicador de força */
+#senha.campo-valido {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>');
+}
+
+/* Ajuste para campos com máscara */
+input[type="text"].campo-valido,
+input[type="tel"].campo-valido,
+input[type="email"].campo-valido,
+input[type="password"].campo-valido,
+input[type="date"].campo-valido {
+  transition: all 0.3s ease;
+}
+
+input[type="text"].campo-invalido,
+input[type="tel"].campo-invalido,
+input[type="email"].campo-invalido,
+input[type="password"].campo-invalido,
+input[type="date"].campo-invalido {
+  transition: all 0.3s ease;
+}
+
+/* Focus nos campos validados */
+.campo-valido:focus {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+  outline: none;
+}
+
+.campo-invalido:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+  outline: none;
+}
+
+/* Estilo para checkbox de termos com erro */
+#termos:invalid {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+/* Tooltip de ajuda (opcional) */
+.campo-ajuda {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Badge de força da senha */
+.senha-forca {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.senha-fraca {
+  background-color: #dc3545;
+  color: white;
+}
+
+.senha-media {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.senha-forte {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Responsivo para mensagens de erro */
+@media (max-width: 768px) {
+  .erro-validacao {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .campo-valido,
+  .campo-invalido {
+    background-size: 16px;
+    background-position: right 8px center;
+    padding-right: 35px !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #e0e0e0;
+  }
+
+  header, nav, footer {
+    background-color: #0D4578;
+    color: #fff;
+  }
+
+  a {
+    color: #90caf9;
+  }
+}
