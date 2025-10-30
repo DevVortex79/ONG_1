@@ -189,33 +189,25 @@ export const pages = {
 
           <label for="data">Data de nascimento:</label><br>
           <input type="date" id="data" name="data" required max="2025-12-31"><br>
-        </fieldset>
 
-        <fieldset class="col-12">
           <legend>Contato</legend>
           <label for="email">E-mail:</label><br>
           <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required><br>
 
           <label for="telefone">Telefone:</label><br>
           <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000" pattern="\\([0-9]{2}\\)\\s?[0-9]{4,5}-[0-9]{4}" title="Digite no formato (00) 90000-0000" required><br>
-        </fieldset>
 
-        <fieldset class="col-12">
           <legend>Endereço</legend>
           <label for="endereco">Endereço:</label><br>
           <input type="text" id="endereco" name="endereco" placeholder="Rua, número, complemento" required><br>
 
           <label for="cep">CEP:</label><br>
           <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="[0-9]{5}-?[0-9]{3}" title="Digite no formato 00000-000" required><br>
-        </fieldset>
 
-        <fieldset class="col-12">
           <legend>Segurança e Confirmação</legend>
           <label for="senha">Senha:</label><br>
           <input type="password" id="senha" name="senha" minlength="6" placeholder="Mínimo 6 caracteres" required><br>
-        </fieldset>
 
-        <fieldset>
           <legend>Termo de Uso</legend>
           <section id="termo-uso">
             <p>Ao se cadastrar nesta plataforma, você concorda com os termos e condições descritos abaixo:</p>

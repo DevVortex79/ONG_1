@@ -316,12 +316,9 @@ window.addEventListener("routechange", e => {
   setTimeout(() => {
     appContent.innerHTML = pages[e.detail];
     loader.classList.remove("show");
-<<<<<<< Updated upstream
-=======
     appContent.setAttribute("tabindex", "-1");
     appContent.focus();
     
->>>>>>> Stashed changes
     if (e.detail === "cadastro") handleCadastroForm();
   }, 400);
 });

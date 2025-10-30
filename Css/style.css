@@ -174,8 +174,6 @@ input[type=password] {
   clear: both;
 }
 
-<<<<<<< Updated upstream
-
 input[type=email]:focus {
   background-color: lightblue;
 }
@@ -184,12 +182,10 @@ input[type=tel]:focus {
   background-color: lightblue;
 }
 
-=======
 input[type=text]:focus,
 input[type=date]:focus,
 input[type=email]:focus,
 input[type=tel]:focus,
->>>>>>> Stashed changes
 input[type=password]:focus {
   background-color: #e3f2fd;
   border-color: #104E8B;
@@ -204,8 +200,6 @@ input[type=checkbox] {
   height: 18px;
 }
 
-<<<<<<< Updated upstream
-=======
 .checkbox-wrapper {
   display: flex;
   align-items: center;
@@ -235,7 +229,6 @@ input[type=checkbox] {
   justify-content: flex-start;
 }
 
->>>>>>> Stashed changes
 .joinBtn {
   width: auto;
   min-width: 150px;
@@ -255,7 +248,7 @@ input[type=checkbox] {
     flex-direction: column;
     width: 100%;
   }
-  
+
   .joinBtn {
     width: 100%;
   }
@@ -308,14 +301,29 @@ input[type=checkbox] {
   font-size: 13px;
   font-weight: bold;
   color: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; bottom: 10px; }
-  10% { opacity: 1; bottom: 30px; }
-  90% { opacity: 1; bottom: 30px; }
-  100% { opacity: 0; bottom: 50px; }
+  0% {
+    opacity: 0;
+    bottom: 10px;
+  }
+
+  10% {
+    opacity: 1;
+    bottom: 30px;
+  }
+
+  90% {
+    opacity: 1;
+    bottom: 30px;
+  }
+
+  100% {
+    opacity: 0;
+    bottom: 50px;
+  }
 }
 
 /* ===== VALIDAÇÃO DE FORMULÁRIO ===== */
@@ -333,9 +341,19 @@ input[type=checkbox] {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 .erro-validacao {
@@ -363,6 +381,7 @@ input[type=checkbox] {
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -381,18 +400,53 @@ input[type=checkbox] {
   box-sizing: border-box;
 }
 
-.col-1 { grid-column: span 1; }
-.col-2 { grid-column: span 2; }
-.col-3 { grid-column: span 3; }
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
-.col-7 { grid-column: span 7; }
-.col-8 { grid-column: span 8; }
-.col-9 { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
+.col-1 {
+  grid-column: span 1;
+}
+
+.col-2 {
+  grid-column: span 2;
+}
+
+.col-3 {
+  grid-column: span 3;
+}
+
+.col-4 {
+  grid-column: span 4;
+}
+
+.col-5 {
+  grid-column: span 5;
+}
+
+.col-6 {
+  grid-column: span 6;
+}
+
+.col-7 {
+  grid-column: span 7;
+}
+
+.col-8 {
+  grid-column: span 8;
+}
+
+.col-9 {
+  grid-column: span 9;
+}
+
+.col-10 {
+  grid-column: span 10;
+}
+
+.col-11 {
+  grid-column: span 11;
+}
+
+.col-12 {
+  grid-column: span 12;
+}
 
 /* Grid responsivo */
 @media (max-width: 768px) {
@@ -401,11 +455,11 @@ input[type=checkbox] {
     gap: 15px;
     padding: 10px;
   }
-  
+
   [class*="col-"] {
     grid-column: span 1;
   }
-  
+
   fieldset {
     padding: 15px;
   }
@@ -416,7 +470,7 @@ input[type=checkbox] {
     padding: 10px;
     gap: 10px;
   }
-  
+
   fieldset {
     padding: 10px;
   }
@@ -560,21 +614,21 @@ p {
     opacity: 0;
   }
 
-  #menu__toggle:checked + .menu__btn > span {
+  #menu__toggle:checked+.menu__btn>span {
     transform: rotate(45deg);
   }
 
-  #menu__toggle:checked + .menu__btn > span::before {
+  #menu__toggle:checked+.menu__btn>span::before {
     top: 0;
     transform: rotate(0deg);
   }
 
-  #menu__toggle:checked + .menu__btn > span::after {
+  #menu__toggle:checked+.menu__btn>span::after {
     top: 0;
     transform: rotate(90deg);
   }
 
-  #menu__toggle:checked ~ .menu__box {
+  #menu__toggle:checked~.menu__box {
     left: 0 !important;
   }
 
@@ -588,9 +642,9 @@ p {
     z-index: 1001;
   }
 
-  .menu__btn > span,
-  .menu__btn > span::before,
-  .menu__btn > span::after {
+  .menu__btn>span,
+  .menu__btn>span::before,
+  .menu__btn>span::after {
     display: block;
     position: absolute;
     width: 100%;
@@ -599,12 +653,12 @@ p {
     transition-duration: .25s;
   }
 
-  .menu__btn > span::before {
+  .menu__btn>span::before {
     content: '';
     top: -8px;
   }
 
-  .menu__btn > span::after {
+  .menu__btn>span::after {
     content: '';
     top: 8px;
   }
@@ -858,7 +912,6 @@ button[type="reset"]:focus-visible {
   outline-offset: 4px;
 }
 
-<<<<<<< Updated upstream
 /* Badge de força da senha */
 .senha-forca {
   display: inline-block;
@@ -891,21 +944,21 @@ button[type="reset"]:focus-visible {
     font-size: 12px;
     padding: 6px 10px;
   }
-  
+
   .campo-valido,
   .campo-invalido {
     background-size: 16px;
     background-position: right 8px center;
     padding-right: 35px !important;
   }
-=======
-/* Remove outline dos links e botões de navegação */
-.navdropdown a:focus,
-.navdropdown a:focus-visible,
-.menu__item:focus,
-.menu__item:focus-visible,
-.subnavdropdownbtn:focus,
-.subnavdropdownbtn:focus-visible {
-  outline: none;
->>>>>>> Stashed changes
+
+  /* Remove outline dos links e botões de navegação */
+  .navdropdown a:focus,
+  .navdropdown a:focus-visible,
+  .menu__item:focus,
+  .menu__item:focus-visible,
+  .subnavdropdownbtn:focus,
+  .subnavdropdownbtn:focus-visible {
+    outline: none;
+  }
 }
