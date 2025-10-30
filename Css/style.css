@@ -853,3 +853,177 @@ FIM REGRAS PARA DISPOSITIVOS COM LARGURA MÍNIMA DE 1024 PIXELS. POR EXEMPLO: CO
   border-radius: 10px;
 
 }
+
+/* ALERTA CENTRALIZADO ANIMADO */
+.alerta {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  z-index: 10000;
+  animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; bottom: 10px; }
+  10% { opacity: 1; bottom: 30px; }
+  90% { opacity: 1; bottom: 30px; }
+  100% { opacity: 0; bottom: 50px; }
+}
+
+/* ===== ESTILOS DE VALIDAÇÃO DE FORMULÁRIO ===== */
+
+/* Campo válido */
+.campo-valido {
+  border: 2px solid #28a745 !important;
+  background-color: #f0fff4 !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px !important;
+}
+
+/* Campo inválido */
+.campo-invalido {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff5f5 !important;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23dc3545" stroke-width="3"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  padding-right: 40px !important;
+  animation: shake 0.3s ease;
+}
+
+/* Animação de erro */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Mensagem de erro */
+.erro-validacao {
+  color: #dc3545;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 5px;
+  padding: 8px 12px;
+  background-color: #fff5f5;
+  border-left: 4px solid #dc3545;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  animation: slideDown 0.3s ease;
+}
+
+.erro-validacao::before {
+  content: "⚠";
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilo para campos de senha com indicador de força */
+#senha.campo-valido {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%2328a745" stroke-width="3"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>');
+}
+
+/* Ajuste para campos com máscara */
+input[type="text"].campo-valido,
+input[type="tel"].campo-valido,
+input[type="email"].campo-valido,
+input[type="password"].campo-valido,
+input[type="date"].campo-valido {
+  transition: all 0.3s ease;
+}
+
+input[type="text"].campo-invalido,
+input[type="tel"].campo-invalido,
+input[type="email"].campo-invalido,
+input[type="password"].campo-invalido,
+input[type="date"].campo-invalido {
+  transition: all 0.3s ease;
+}
+
+/* Focus nos campos validados */
+.campo-valido:focus {
+  border-color: #28a745 !important;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25) !important;
+  outline: none;
+}
+
+.campo-invalido:focus {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+  outline: none;
+}
+
+/* Estilo para checkbox de termos com erro */
+#termos:invalid {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+/* Tooltip de ajuda (opcional) */
+.campo-ajuda {
+  font-size: 12px;
+  color: #6c757d;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Badge de força da senha */
+.senha-forca {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+  transition: all 0.3s ease;
+}
+
+.senha-fraca {
+  background-color: #dc3545;
+  color: white;
+}
+
+.senha-media {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.senha-forte {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Responsivo para mensagens de erro */
+@media (max-width: 768px) {
+  .erro-validacao {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .campo-valido,
+  .campo-invalido {
+    background-size: 16px;
+    background-position: right 8px center;
+    padding-right: 35px !important;
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instituto Caminhos do Amanhã</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="Css/style.css" />
+
+  <!-- Loader e estilos adicionais -->
+  <style>
+    #page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    
+    #page-loader.show {
+      display: flex;
+    }
+    
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #104E8B;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .navdropdown a.active,
+    .menu__item.active {
+      background-color: #0D4578;
+      font-weight: bold;
+    }
+    
+    #app-content {
+      min-height: 400px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="page-loader">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="app">
+    <header>
+      <img src="IMG/Caminhos.jpg" alt="Logo do Instituto Caminhos do Amanhã" width="100">
+      <h1>Instituto Caminhos do Amanhã</h1>
+    </header>
+
+    <!-- MENU MOBILE -->
+    <div class="hamburger-menu">
+      <input id="menu__toggle" type="checkbox" />
+      <label class="menu__btn" for="menu__toggle"><span></span></label>
+      <ul class="menu__box">
+        <li><a href="/" data-link class="menu__item">Página inicial</a></li>
+        <li><a href="/projetos" data-link class="menu__item">Projetos sociais</a></li>
+        <li><a href="/cadastro" data-link class="menu__item">Cadastro</a></li>
+      </ul>
+    </div>
+
+    <!-- MENU DESKTOP -->
+    <div class="navdropdown">
+      <div class="subnavdropdown">
+        <button class="subnavdropdownbtn">MENU <i class="fa fa-caret-down"></i></button>
+        <div class="subnavdropdown-content">
+          <a href="/" data-link>Página inicial</a>
+          <a href="/projetos" data-link>Projetos sociais</a>
+          <a href="/cadastro" data-link>Cadastro</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conteúdo dinâmico -->
+    <main id="app-content"></main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      &copy; 2025 Instituto Caminhos do Amanhã. Todos os direitos reservados.
+    </footer>
+  </div>
+
+  <!-- Scripts SPA - ORDEM CORRETA -->
+  <script type="module" src="Js/spa-router.js"></script>
+  <script type="module" src="Js/spa-pages.js"></script>
+  <script type="module" src="Js/spa-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Css/style.css" />
+  <title>Instituto Caminhos do Amanhã - Cadastro de Voluntariado</title>
+</head>
+
+<body>
+  <header>
+    <h1>
+      <img src="IMG/Caminhos.jpg" alt="Logo do Instituto Caminhos do Amanhã" width="75">
+      Instituto Caminhos do Amanhã
+    </h1>
+  </header>
+
+  <!-- MENU MOBILE -->
+  <div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle"><span></span></label>
+    <ul class="menu__box">
+      <li><a href="index.html">Página inicial</a></li>
+      <li><a href="projetos.html">Projetos sociais</a></li>
+      <li><a href="cadastro.html" class="active">Cadastro</a></li>
+    </ul>
+  </div>
+
+  <!-- MENU DESKTOP -->
+  <div class="navdropdown">
+    <div class="subnavdropdown">
+      <button class="subnavdropdownbtn">MENU <i class="fa fa-caret-down"></i></button>
+      <div class="subnavdropdown-content">
+        <a href="index.html">Página inicial</a>
+        <a href="projetos.html">Projetos sociais</a>
+        <a href="cadastro.html" class="active">Cadastro</a>
+      </div>
+    </div>
+  </div>
+
+  <h3>Quem pode ser voluntário?</h3>
+  <div class="container">
+    <img src="IMG/maos.png" alt="Mãos coloridas representando voluntariado" width="300">
+  </div>
+  <p>
+    Professores e educadores<br>
+    Estudantes universitários<br>
+    Profissionais de diversas áreas<br>
+    Pessoas interessadas em apoiar crianças e adolescentes
+  </p>
+
+  <h3>Como o voluntário atua:</h3>
+  <div class="container">
+    <img src="IMG/cadastro.jpg" alt="Imagem de voluntário" width="250">
+  </div>
+  <p>
+    Ministrando oficinas educativas e culturais<br>
+    Apoiando nas aulas de tecnologia, robótica e reforço escolar<br>
+    Participando de atividades recreativas e esportivas<br>
+    Auxiliando em eventos comunitários e campanhas solidárias
+  </p>
+
+  <h2>Cadastro:</h2>
+  <form class="Frm-grid">
+
+    <fieldset class="col-12">
+      <legend>Dados Pessoais</legend>
+      <label for="nome">Nome completo:</label><br>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required><br>
+
+      <label for="cpf">CPF:</label><br>
+      <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
+        pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" title="Digite no formato 000.000.000-00" required><br>
+
+      <label for="data">Data de nascimento:</label><br>
+      <input type="date" id="data" name="data" required max="2025-12-31"><br>
+    </fieldset>
+
+    <fieldset class="col-12">
+      <legend>Contato</legend>
+      <label for="email">E-mail:</label><br>
+      <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required><br>
+
+      <label for="telefone">Telefone:</label><br>
+      <input type="tel" id="telefone" name="telefone" placeholder="(00) 90000-0000"
+        pattern="\([0-9]{2}\)\s?[0-9]{4,5}-[0-9]{4}" title="Digite no formato (00) 90000-0000" required><br>
+    </fieldset>
+
+    <fieldset class="col-12">
+      <legend>Endereço</legend>
+      <label for="endereco">Endereço:</label><br>
+      <input type="text" id="endereco" name="endereco" placeholder="Rua, número, complemento" required><br>
+
+      <label for="cep">CEP:</label><br>
+      <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="[0-9]{5}-?[0-9]{3}" title="Digite no formato 00000-000" required><br>
+    </fieldset>
+
+    <fieldset class="col-12">
+      <legend>Segurança e Confirmação</legend>
+      <label for="senha">Senha:</label><br>
+      <input type="password" id="senha" name="senha" minlength="6" placeholder="Mínimo 6 caracteres" required><br>
+    </fieldset>
+
+    <fieldset>
+      <legend>Termo de Uso</legend>
+      <section id="termo-uso">
+        <p>Ao se cadastrar nesta plataforma, você concorda com os termos e condições descritos abaixo:</p>
+        <h4>1. Coleta de Dados</h4>
+        <p>Os dados fornecidos serão usados apenas para gestão de voluntariado.</p>
+
+        <h4>2. Aceitação do Termo</h4>
+        <input type="checkbox" id="termos" name="termos" required>
+        <label for="termos">Li e aceito os termos de uso</label>
+      </section>
+    </fieldset>
+
+    <button type="submit" class="joinBtn">Cadastrar</button>
+    <button type="reset" class="joinBtn">Limpar</button>
+
+  </form>
+
+  <footer class="footer">
+    &copy; 2025 Instituto Caminhos do Amanhã. Todos os direitos reservados.
+  </footer>
+</body>
+
+</html>
