@@ -94,4 +94,5 @@ Desenvolver sistema de badges e tags para categorização
 - Implementar minificação de CSS, JavaScript e HTML;
 - Configurar compressão de imagens.
 
-
+**No link a baixo podemos visualizar o site devidamente funcional:**
+[https://institutocaminhosdoamanha.netlify.app/]
