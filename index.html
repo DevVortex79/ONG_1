@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Instituto Caminhos do Amanhã - Transformando vidas através da educação, tecnologia e inclusão social">
   <title>Instituto Caminhos do Amanhã</title>
 
-  <!-- CSS -->
+  <!-- CSS Principal -->
   <link rel="stylesheet" href="Css/style.css" />
 
-  <!-- Loader e estilos adicionais -->
+  <!-- Estilos do SPA -->
   <style>
+    /* ==================== LOADER ==================== */
     #page-loader {
       position: fixed;
       top: 0;
@@ -21,6 +23,7 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      backdrop-filter: blur(2px);
     }
     
     #page-loader.show {
@@ -34,43 +37,94 @@
       border-top: 4px solid #104E8B;
       border-radius: 50%;
       animation: spin 1s linear infinite;
+      box-shadow: 0 0 20px rgba(16, 78, 139, 0.3);
     }
     
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
     
+    /* ==================== MENU ATIVO ==================== */
     .navdropdown a.active,
     .menu__item.active {
       background-color: #0D4578;
       font-weight: bold;
     }
     
+    .menu__item.active::before {
+      content: "▸ ";
+      font-weight: bold;
+    }
+    
+    /* ==================== CONTEÚDO PRINCIPAL ==================== */
     #app-content {
       min-height: 400px;
       padding: 20px;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    /* ==================== ACESSIBILIDADE ==================== */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #104E8B;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      z-index: 10000;
+      font-weight: bold;
+      border-radius: 0 0 8px 0;
+      transition: top 0.3s;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+      outline: 3px solid #FFD700;
+      outline-offset: 2px;
+    }
+    
+    /* ==================== SMOOTH SCROLL ==================== */
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
 
 <body>
+  <!-- Loader -->
+  <!-- Link de acessibilidade -->
   <a class="skip-link" href="#app-content">Ir para o conteúdo principal</a>
 
-  <!-- Loader -->
+  <!-- Loader de página -->
   <div id="page-loader">
-    <div class="spinner"></div>
+    <div class="spinner" role="status" aria-label="Carregando conteúdo"></div>
   </div>
 
   <div id="app">
+    <!-- ==================== CABEÇALHO ==================== -->
     <header>
       <img src="IMG/Caminhos.jpg" alt="Logo do Instituto Caminhos do Amanhã" width="100">
       <h1>Instituto Caminhos do Amanhã</h1>
     </header>
 
-    <!-- MENU MOBILE -->
+    <!-- ==================== MENU MOBILE ==================== -->
     <div class="hamburger-menu">
-      <input id="menu__toggle" type="checkbox" />
-      <label class="menu__btn" for="menu__toggle"><span></span></label>
+      <input id="menu__toggle" type="checkbox" aria-label="Abrir menu de navegação" />
+      <label class="menu__btn" for="menu__toggle">
+        <span></span>
+      </label>
       <ul class="menu__box">
         <li><a href="/" data-link class="menu__item">Página inicial</a></li>
         <li><a href="/projetos" data-link class="menu__item">Projetos sociais</a></li>
@@ -78,28 +132,33 @@
       </ul>
     </div>
 
-    <!-- MENU DESKTOP -->
-    <div class="navdropdown">
+    <!-- ==================== MENU DESKTOP ==================== -->
+    <nav class="navdropdown" role="navigation" aria-label="Navegação principal">
       <div class="subnavdropdown">
-        <button class="subnavdropdownbtn">MENU <i class="fa fa-caret-down"></i></button>
+        <button class="subnavdropdownbtn" aria-expanded="false" aria-haspopup="true">
+          MENU <i class="fa fa-caret-down"></i>
+        </button>
         <div class="subnavdropdown-content">
           <a href="/" data-link>Página inicial</a>
           <a href="/projetos" data-link>Projetos sociais</a>
           <a href="/cadastro" data-link>Cadastro</a>
         </div>
       </div>
-    </div>
+    </nav>
 
-    <!-- Conteúdo dinâmico -->
-    <main id="app-content"></main>
+    <!-- ==================== CONTEÚDO DINÂMICO ==================== -->
+    <main id="app-content" role="main">
+      <!-- O conteúdo das páginas será carregado aqui dinamicamente -->
+    </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
-      &copy; 2025 Instituto Caminhos do Amanhã. Todos os direitos reservados.
+    <!-- ==================== RODAPÉ ==================== -->
+    <footer class="footer" role="contentinfo">
+      <p>&copy; 2025 Instituto Caminhos do Amanhã. Todos os direitos reservados.</p>
     </footer>
   </div>
 
-  <!-- Scripts SPA - ORDEM CORRETA -->
+  <!-- ==================== SCRIPTS DO SPA ==================== -->
+  <!-- IMPORTANTE: Manter esta ordem -->
   <script type="module" src="Js/spa-router.js"></script>
   <script type="module" src="Js/spa-pages.js"></script>
   <script type="module" src="Js/spa-app.js"></script>
